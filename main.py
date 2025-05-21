@@ -1,5 +1,5 @@
 from Owner.MenuOwner import menu_owner
-#from Buyer.MenuBuyer import menu_buyer
+from Buyer.MenuBuyer import menu_buyer
 
 def main():
     while True:
@@ -11,7 +11,7 @@ def main():
         if pilihan == '1':
             menu_owner()
         elif pilihan == '2':
-            print("Menu penyewa belum tersedia.")
+            menu_buyer()
         else:
             print("Pilihan tidak valid.")
 

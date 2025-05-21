@@ -1,8 +1,14 @@
 [
     {
-        "nama": "toyota kijang",
-        "ukuran": "4",
+        "nama": "Avanza",
+        "ukuran": "6",
         "stok": 5,
-        "harga": 1000
+        "harga_perhari": 300000
+    },
+    {
+        "nama": "vios",
+        "ukuran": "2",
+        "stok": 10,
+        "harga_perhari": 100000
     }
 ]
