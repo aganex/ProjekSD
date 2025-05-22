@@ -1,3 +1,4 @@
+#tambahedithapus.py
 import json
 import os
 from Data.PathData import KENDARAAN_JSON

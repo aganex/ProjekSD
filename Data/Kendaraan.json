@@ -10,5 +10,11 @@
         "ukuran": "2",
         "stok": 10,
         "harga_perhari": 100000
+    },
+    {
+        "nama": "serena",
+        "ukuran": "4",
+        "stok": 2,
+        "harga_perhari": 100000
     }
 ]

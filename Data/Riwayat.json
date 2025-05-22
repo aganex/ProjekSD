@@ -1,4 +1,38 @@
 [
-
-{}
+    {
+        "nik": "317372163868",
+        "nama": "Udin Kenapa",
+        "no_hp": "0998998428984",
+        "kendaraan": "Avanza",
+        "ukuran": "6",
+        "harga_perhari": 300000,
+        "hari": 3,
+        "total_harga": 900000,
+        "tanggal_sewa": "2025-05-22",
+        "status": "selesai"
+    },
+    {
+        "nik": "317372163868",
+        "nama": "Udin Kenapa",
+        "no_hp": "0998998428984",
+        "kendaraan": "Avanza",
+        "ukuran": "6",
+        "harga_perhari": 300000,
+        "hari": 3,
+        "status": "tolak",
+        "total_harga": 900000,
+        "tanggal_sewa": "2025-05-23"
+    },
+    {
+        "nik": "123",
+        "nama": "mmm",
+        "no_hp": "2131",
+        "kendaraan": "Avanza",
+        "ukuran": "6",
+        "harga_perhari": 300000,
+        "hari": 1,
+        "status": "tolak",
+        "total_harga": 300000,
+        "tanggal_sewa": "2025-05-23"
+    }
 ]
