@@ -9,6 +9,7 @@
         "hari": 3,
         "total_harga": 900000,
         "tanggal_sewa": "2025-05-22",
+        "tanggal_kembali": "2025-05-24",
         "status": "selesai"
     },
     {
@@ -34,5 +35,40 @@
         "status": "tolak",
         "total_harga": 300000,
         "tanggal_sewa": "2025-05-23"
+    },
+    {
+        "nik": "1234",
+        "nama": "d",
+        "no_hp": "123321",
+        "kendaraan": "Avanza",
+        "ukuran": "6",
+        "harga_perhari": 300000,
+        "hari": 2,
+        "status": "terima",
+        "total_harga": 600000,
+        "tanggal_sewa": "2025-06-02"
+    },
+    {
+        "nik": "22",
+        "nama": "uin",
+        "no_hp": "0090",
+        "kendaraan": "hilux",
+        "ukuran": "4",
+        "harga_perhari": 1000,
+        "hari": 2,
+        "status": "terima",
+        "total_harga": 2000,
+        "tanggal_sewa": "2025-06-08"
+    },
+    {
+        "nik": "111",
+        "nama": "Peto",
+        "no_hp": "0123",
+        "kendaraan": "hilux",
+        "ukuran": "4",
+        "harga_perhari": 1000,
+        "hari": 5,
+        "status": "selesai",
+        "tanggal_pengembalian": "2025-06-08"
     }
 ]
