@@ -2,7 +2,7 @@
     {
         "nama": "Avanza",
         "ukuran": "6",
-        "stok": 4,
+        "stok": 3,
         "harga_perhari": 300000
     },
     {
@@ -14,7 +14,7 @@
     {
         "nama": "hilux",
         "ukuran": "4",
-        "stok": 13,
-        "harga_perhari": 1000
+        "stok": 10,
+        "harga_perhari": 100000
     }
 ]

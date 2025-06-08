@@ -19,7 +19,7 @@ def menu_riwayat():
         return
 
     print("\n=== 📜 RIWAYAT PENYEWAAN ===")
-    print(f"{'No':<4}{'Nama':<20}{'Kendaraan':<15}{'Lama':<6}{'Total':<15}{'Tgl Sewa':<12}{'Tgl Kembali':<12}{'Dikembalikan':<20}{'Status':<10}")
+    print(f"{'No':<4}{'Nama':<20}{'Kendaraan':<15}{'Lama':<6}{'Total':<15}{'Tgl Sewa':<12}{'Tgl Kembali':<12}{'Status':<10}")
     print("-" * 120)
 
     for i, data in enumerate(riwayat, 1):
@@ -27,7 +27,6 @@ def menu_riwayat():
         total_harga = f"Rp{data.get('total_harga', 0):,}"
         tanggal_sewa = data.get('tanggal_sewa', '-')
         tanggal_kembali = data.get('tanggal_kembali', '-')
-        pengembalian = data.get('tanggal_pengembalian', '-')
         status = data.get('status', '-')
 
-        print(f"{i:<4}{data['nama']:<20}{data['kendaraan']:<15}{lama_sewa:<6}{total_harga:<15}{tanggal_sewa:<12}{tanggal_kembali:<12}{pengembalian:<20}{status:<10}")
+        print(f"{i:<4}{data['nama']:<20}{data['kendaraan']:<15}{lama_sewa:<6}{total_harga:<15}{tanggal_sewa:<12}{tanggal_kembali:<12}{status:<10}")

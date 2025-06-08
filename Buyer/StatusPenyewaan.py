@@ -17,7 +17,6 @@ def simpan_data(filepath, data):
 def status_penyewaan():
     antrian = muat_data(ANTRIAN_JSON)
     kendaraan = muat_data(KENDARAAN_JSON)
-    riwayat = muat_data(RIWAYAT_JSON)
 
     nik = input("\nMasukkan NIK Anda untuk cek status penyewaan: ").strip()
     data_user = [item for item in antrian if item['nik'] == nik]
@@ -41,6 +40,7 @@ def status_penyewaan():
             total_harga = item['harga_perhari'] * item['hari']
             tanggal_sewa = item.get('tanggal_sewa', '-')
             tanggal_kembali = item.get('tanggal_kembali')
+
             if not tanggal_kembali and tanggal_sewa != '-':
                 try:
                     tanggal_awal = datetime.strptime(tanggal_sewa, "%Y-%m-%d")
@@ -58,24 +58,20 @@ def status_penyewaan():
 
         print("\n📝 Menu:")
         print("1. Kembalikan kendaraan (untuk status Disetujui)")
-        print("2. Lihat riwayat penyewaan")
-        print("3. Kembali ke Menu Buyer")
+        print("2. Kembali ke Menu Buyer")
 
-        pilihan = input("\nPilih menu (1-3): ").strip()
+        pilihan = input("\nPilih menu (1-2): ").strip()
 
         if pilihan == '1':
-            kembalikan_kendaraan(antrian, kendaraan, riwayat, data_user, nik)
+            kembalikan_kendaraan(antrian, kendaraan, data_user, nik)
         elif pilihan == '2':
-            lihat_riwayat(nik)
-        elif pilihan == '3':
             simpan_data(ANTRIAN_JSON, antrian)
             break
         else:
             print("\n❌ Pilihan tidak valid!")
 
-def kembalikan_kendaraan(antrian, kendaraan, riwayat, data_user, nik):
-    kendaraan_diterima = [item for item in data_user 
-                         if item['status'].lower() == 'terima']
+def kembalikan_kendaraan(antrian, kendaraan, data_user, nik):
+    kendaraan_diterima = [item for item in data_user if item['status'].lower() == 'terima']
 
     if not kendaraan_diterima:
         print("\n❌ Tidak ada kendaraan yang bisa dikembalikan.")
@@ -93,13 +89,11 @@ def kembalikan_kendaraan(antrian, kendaraan, riwayat, data_user, nik):
             print("\n❌ Nomor tidak valid!")
             return
 
-        selected = kendaraan_diterima[pilih-1]
+        selected = kendaraan_diterima[pilih - 1]
 
         for item in antrian:
             if item['nik'] == selected['nik'] and item['kendaraan'] == selected['kendaraan'] and item['status'].lower() == 'terima':
                 item['status'] = 'selesai'
-                item['tanggal_pengembalian'] = datetime.now().strftime("%Y-%m-%d")
-                riwayat.append(item)
                 break
 
         for k in kendaraan:
@@ -109,31 +103,7 @@ def kembalikan_kendaraan(antrian, kendaraan, riwayat, data_user, nik):
 
         simpan_data(ANTRIAN_JSON, antrian)
         simpan_data(KENDARAAN_JSON, kendaraan)
-        simpan_data(RIWAYAT_JSON, riwayat)
-
-        print(f"\n✅ {selected['kendaraan']} berhasil dikembalikan!")
+        print(f"\n✅ {selected['kendaraan']} berhasil dikembalikan dan status diperbarui!")
 
     except ValueError:
         print("\n❌ Input harus berupa angka!")
-
-def lihat_riwayat(nik):
-    riwayat = muat_data(RIWAYAT_JSON)
-    riwayat_user = [item for item in riwayat if item['nik'] == nik]
-
-    if not riwayat_user:
-        print("\n📭 Tidak ada riwayat penyewaan.")
-        return
-
-    print(f"\n📜 Riwayat Penyewaan:")
-    print("-" * 60)
-
-    for i, item in enumerate(riwayat_user, 1):
-        total = item['harga_perhari'] * item['hari']
-        print(f"\n🔹 {i}. {item['kendaraan']} ({item['ukuran']} seat)")
-        print(f"   👤 Penyewa: {item['nama']}")
-        print(f"   📅 Lama sewa: {item['hari']} hari")
-        print(f"   💰 Total biaya: Rp{total:,}")
-        print(f"   📆 Tanggal kembali (rencana): {item.get('tanggal_kembali', '-')}")
-        print(f"   ⏱️ Tanggal pengembalian (nyata): {item.get('tanggal_pengembalian', '-')}")
-
-    input("\nTekan Enter untuk kembali...")

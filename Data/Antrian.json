@@ -10,40 +10,20 @@
         "status": "tolak"
     },
     {
-        "nik": "123",
-        "nama": "mmm",
-        "no_hp": "2131",
-        "kendaraan": "Avanza",
-        "ukuran": "6",
-        "harga_perhari": 300000,
-        "hari": 1,
-        "status": "selesai"
-    },
-    {
-        "nik": "1234",
-        "nama": "d",
-        "no_hp": "123321",
-        "kendaraan": "Avanza",
-        "ukuran": "6",
-        "harga_perhari": 300000,
-        "hari": 2,
-        "status": "terima"
-    },
-    {
-        "nik": "111",
-        "nama": "Peto",
-        "no_hp": "0123",
+        "nik": "0",
+        "nama": "Cahyo Kasmono",
+        "no_hp": "098",
         "kendaraan": "hilux",
         "ukuran": "4",
         "harga_perhari": 1000,
-        "hari": 5,
+        "hari": 4,
         "status": "selesai",
         "tanggal_pengembalian": "2025-06-08"
     },
     {
-        "nik": "22",
-        "nama": "uin",
-        "no_hp": "0090",
+        "nik": "12345",
+        "nama": "kusmono",
+        "no_hp": "1233",
         "kendaraan": "hilux",
         "ukuran": "4",
         "harga_perhari": 1000,
